@@ -1,7 +1,6 @@
 {
   "name": "rental-frontend",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "next -p 3000",
@@ -19,7 +18,6 @@
     "@stripe/stripe-js": "^1.16.0",
     "apollo-upload-client": "^16.0.0",
     "babel-core": "^6.26.3",
-    "babel-plugin-styled-components": "^1.13.2",
     "date-fns": "^2.23.0",
     "downshift": "^6.1.7",
     "graphql": "^15.5.1",
@@ -35,5 +33,73 @@
     "react-transition-group": "^4.4.2",
     "styled-components": "^5.3.0",
     "waait": "^1.0.5"
-  }
+  },
+  "resolutions": {
+    "styled-components": "^5"
+  },
+  "babel": {
+    "env": {
+      "development": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "production": {
+        "presets": [
+          "next/babel"
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      },
+      "test": {
+        "presets": [
+          [
+            "next/babel",
+            {
+              "preset-env": {
+                "modules": "commonjs"
+              }
+            }
+          ]
+        ],
+        "plugins": [
+          [
+            "styled-components",
+            {
+              "ssr": true,
+              "displayName": true
+            }
+          ]
+        ]
+      }
+    }
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.13.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-jb/rental-frontend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/matt-jb/rental-frontend/issues"
+  },
+  "homepage": "https://github.com/matt-jb/rental-frontend#readme",
+  "description": ""
 }
