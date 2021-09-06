@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "next -p 3000",
+    "dev": "next -p 3001",
     "build": "next build",
-    "start": "next start -p 3000",
+    "start": "next start -p 3001",
     "test": "NODE_ENV=test jest --watch"
   },
   "author": "matt-jb",
