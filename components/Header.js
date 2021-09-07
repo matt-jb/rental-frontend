@@ -47,11 +47,11 @@ export default function Header() {
                         Rental
                     </Link>
                 </Logo>
+                <Nav />
             </div>
             <div className="sub-bar">
                 <p>Search</p>
             </div>
-            <Nav />
         </HeaderStyles>
     )
 }
