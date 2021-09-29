@@ -1,7 +1,6 @@
 import { useMutation } from "@apollo/client";
 import gql from "graphql-tag";
 
-
 const DELETE_PRODUCT_MUTATION = gql`
     mutation DELETE_PRODUCT_MUTATION($id: ID!) {
         deleteProduct(id: $id) {
@@ -25,7 +24,9 @@ export default function DeleteProduct({ id, children }) {
             if(confirm('Are you sure you want to delete this bike?')) {
                 console.log('Deleting!!!!');
                 deleteProduct().catch(e => alert(e.message));
-            };}}>
-        {children}
+            };}
+        }
+    >
+    {children}
     </button>
 }
