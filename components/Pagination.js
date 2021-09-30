@@ -6,7 +6,7 @@ import gql from 'graphql-tag';
 import { useQuery } from '@apollo/client';
 import { perPage } from '../config';
 
-const PAGINATION_QUERY = gql`
+export const PAGINATION_QUERY = gql`
     query {
         _allProductsMeta {
         count
@@ -24,7 +24,7 @@ export default function Pagination({ page }) {
 
     return (<PaginationStyles>
         <Head>
-            <title>Bike Rental - page {page} of ___</title>
+            <title>Bike Rental - page {page} of {pageCount}</title>
         </Head>
         <Link href={`/products/${page - 1}`}>
             <a aria-disabled={page <= 1}>← Prev</a>
